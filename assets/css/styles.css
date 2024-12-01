@@ -1,0 +1,137 @@
+:root {
+    --bg-color: #f0f0f0;
+    --calc-bg: #ffffff;
+    --btn-bg: #e0e0e0;
+    --btn-hover: #d0d0d0;
+    --text-color: #333333;
+    --operator-bg: #ff9500;
+    --operator-hover: #ff8000;
+    --display-bg: #f8f8f8;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #2c3e50;
+    --calc-bg: #34495e;
+    --btn-bg: #465c71;
+    --btn-hover: #567086;
+    --text-color: #ecf0f1;
+    --operator-bg: #e67e22;
+    --operator-hover: #d35400;
+    --display-bg: #2c3e50;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    padding: 20px;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.calculator {
+    background-color: var(--calc-bg);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    max-width: 400px;
+    width: 100%;
+}
+
+.display {
+    background-color: var(--display-bg);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+    font-size: 2em;
+    color: var(--text-color);
+    min-height: 80px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+}
+
+button:hover {
+    background-color: var(--btn-hover);
+}
+
+.operator {
+    background-color: var(--operator-bg);
+    color: white;
+}
+
+.operator:hover {
+    background-color: var(--operator-hover);
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        padding: 15px;
+    }
+
+    .display {
+        padding: 15px;
+        font-size: 1.5em;
+        min-height: 60px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 320px) {
+    .calculator {
+        padding: 10px;
+    }
+
+    .display {
+        padding: 10px;
+        font-size: 1.2em;
+        min-height: 50px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
